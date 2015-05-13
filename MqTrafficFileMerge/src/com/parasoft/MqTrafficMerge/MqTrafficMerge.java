@@ -1,5 +1,5 @@
 //Written by Todd Brown of Parasoft Corporation 5/7/2015
-//Version 1.0
+//Version 1.1.2
 
 package com.parasoft.MqTrafficMerge;
 
@@ -53,7 +53,7 @@ public class MqTrafficMerge
           else
           {
         	  trafficDirectory = check;
-        	  System.out.println("Using provided directory of :" + trafficDirectory);
+        	  System.out.println("Using provided directory of:" + trafficDirectory);
           }
           reader.close();
           
@@ -79,7 +79,10 @@ public class MqTrafficMerge
               if (!typeCheck.contains(".txt") && !typeCheck.contains(".xml"))
               {
             	  System.out.println("Skipping file " + typeCheck + " because it is not a .txt or .xml\n");
-            	  readerFiles.close();
+            	  if (readerFiles != null)
+            	  {
+            		  readerFiles.close();
+            	  }
               }
               else
               {
