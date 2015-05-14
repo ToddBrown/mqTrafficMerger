@@ -53,7 +53,7 @@ public class MqTrafficMerge
           else
           {
         	  trafficDirectory = check;
-        	  System.out.println("Using provided directory of:" + trafficDirectory);
+        	  System.out.println("Using provided directory of: " + trafficDirectory);
           }
           reader.close();
           
