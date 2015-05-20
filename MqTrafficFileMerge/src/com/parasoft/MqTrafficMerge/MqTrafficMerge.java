@@ -16,7 +16,7 @@ public class MqTrafficMerge
     	  try
     	  {
     		  System.out.println("\n\t\"s are not required for any inputs to this program. \nWrite output file location (Default: "
-    		  		+ System.getProperty("user.dir") + "\\mergedTraffic.txt):");
+    		  		+ System.getProperty("user.dir") + File.separator + "mergedTraffic.txt):");
     		  reader = new BufferedReader(new InputStreamReader(System.in));
     		  outputFile = reader.readLine();
     		  outputWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"));
@@ -24,8 +24,9 @@ public class MqTrafficMerge
     	  //catch invalid file paths and default to current directory traffic file
     	  catch (FileNotFoundException fileNotFound)
     	  {
-    		  System.err.println("File path is not valid!\n\nDefaulting to file: " + System.getProperty("user.dir") + "\\mergedTraffic.txt");
-    		  outputFile = System.getProperty("user.dir") + "\\mergedTraffic.txt";
+    		  System.err.println("File path is not valid!\n\nDefaulting to file: " + System.getProperty("user.dir") +  File.separator + 
+    				  "mergedTraffic.txt");
+    		  outputFile = System.getProperty("user.dir") + File.separator + "mergedTraffic.txt";
     	  }
     	  //close out writer from try block if still open
     	  finally
